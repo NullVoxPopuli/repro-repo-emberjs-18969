@@ -1,0 +1,29 @@
+<ol>
+  <li>Open browser dev tools</li>
+  <li>click "Make True"</li>
+  <li>click "Make False"</li>
+  <li>Notice an error in the console</li>
+</ol>
+
+<button {{on 'click' this.makeTrue}}>
+  Make True
+</button>
+
+<button {{on 'click' this.makeFalse}}>
+  Make False
+</button>
+
+<hr>
+
+{{#if (eq this.data.kind 'foo')}}
+  Some Deep Render Requiring nested Data, based on the assumpting that kind is foo
+  <SubComponent @data={{this.data}} />
+{{else}}
+  Click "Make True"
+{{/if}}
+
+<hr>
+
+<pre>this.data =
+{{as-formatted-string this.data}}
+</pre>
